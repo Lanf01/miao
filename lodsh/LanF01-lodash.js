@@ -22,7 +22,14 @@ var maio = {
     return result
   },
 
-  compact: function() {
+  compact: function (ary) {
+    var result = []
+    for (var i = 0; i < ary.length; i++) {
+      if (ary[i] == false || ary[i] == null || ary[i] == "" || ary[i] == undefined || ary[i] == NaN) {
+
+      }
+    }
+
 
   },
 
