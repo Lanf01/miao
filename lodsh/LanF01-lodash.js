@@ -24,11 +24,13 @@ var maio = {
 
   compact: function (ary) {
     var result = []
+    var tmo = []
     for (var i = 0; i < ary.length; i++) {
       if (ary[i] == false || ary[i] == null || ary[i] == "" || ary[i] == undefined || ary[i] == NaN) {
-
+        tmp.push(ary)
       }
     }
+    return result
 
 
   },
