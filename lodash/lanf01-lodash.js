@@ -1,4 +1,4 @@
-var maio = {
+var lanf01 = {
 
   chunk: function (ary, size = 1) {
     var result = []
