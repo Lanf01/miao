@@ -28,7 +28,7 @@ var lanf01 = {
   compact: function (ary) {
     var result = []
     for (var i = 0; i < ary.length; i++) {
-      if (ary[i] !== false && ary[i] !== null && ary[i] !== "" && ary[i] !== undefined && ary[i] !== NaN) {
+      if (ary[i]) {
         result.push(ary[i])
       }
     }
@@ -53,13 +53,11 @@ var lanf01 = {
     return result
   },
 
-  fill: function (ary, value, start = 0, end = ary.length - 1) {
-    var result = []
-    for (var i = start; i <= end; i++) {
+  fill: function (ary, value, start = 0, end = ary.length) {
+    for (var i = start; i < end; i++) {
       ary[i] = value
-      result.push(ary[i])
     }
-    return result
+    return ary
   },
 
   findIndex: function (ary, predicate = _.identity, froIndex = 0) {
