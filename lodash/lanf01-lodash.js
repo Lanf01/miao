@@ -62,4 +62,17 @@ var lanf01 = {
     return result
   },
 
+  findIndex: function (ary, predicate = _.identity, froIndex = 0) {
+
+  },
+
+  dropRight: function (ary, n = ary.length - 1) {
+    var result = []
+    for (i = n; i > -1; i--) {
+      result.push(ary[i])
+    }
+    return result
+
+  },
+
 }
