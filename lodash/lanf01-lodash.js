@@ -17,7 +17,9 @@ var lanf01 = {
         result.push(tmp)
         tmp = []
       }
-      result.push(tmp)
+      if (tmp(0)) {
+        result.push(tmp)
+      }
     }
     return result
   },
@@ -28,9 +30,9 @@ var lanf01 = {
     for (var i = 0; i < ary.length; i++) {
       if (ary[i] == false || ary[i] == null || ary[i] == "" || ary[i] == undefined || ary[i] == NaN) {
         tmp.push(ary[i])
-
+      } else {
+        result.push(ary[i])
       }
-      result.push(ary)
     }
     return result
 
