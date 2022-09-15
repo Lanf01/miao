@@ -12,7 +12,7 @@ var lanf01 = {
       return ary
     }
     for (var i = 0; i < ary.length; i++) {
-      tmp.push(ary)
+      tmp.push(ary[i])
       if (tmp.length == size) {
         result.push(tmp)
         tmp = []
@@ -27,7 +27,7 @@ var lanf01 = {
     var tmo = []
     for (var i = 0; i < ary.length; i++) {
       if (ary[i] == false || ary[i] == null || ary[i] == "" || ary[i] == undefined || ary[i] == NaN) {
-        tmp.push(ary)
+        tmp.push(ary[i])
       }
     }
     return result
