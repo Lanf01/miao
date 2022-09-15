@@ -17,8 +17,8 @@ var lanf01 = {
         result.push(tmp)
         tmp = []
       }
+      result.push(tmp)
     }
-    result.push(tmp)
     return result
   },
 
