@@ -64,10 +64,11 @@ var lanf01 = {
 
   },
 
-  dropRight: function (ary, n = ary.length - 1) {
+  dropRight: function (ary, n = ary.length - 2) {
     var result = []
-    for (i = n; i > -1; i--) {
+    for (i = n; i >= 0; i--) {
       result.push(ary[i])
+      reserve(result)
     }
     return result
 
