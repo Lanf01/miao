@@ -25,21 +25,41 @@ var lanf01 = {
     return result
   },
 
-  compact: function (ary,) {
+  compact: function (ary) {
     var result = []
-    var tmp = []
     for (var i = 0; i < ary.length; i++) {
-      if (ary[i] == false || ary[i] == null || ary[i] == "" || ary[i] == undefined || ary[i] == NaN) {
-        tmp.push(ary[i])
-      } else {
+      if (ary[i] !== false && ary[i] !== null && ary[i] !== "" && ary[i] !== undefined && ary[i] !== NaN) {
         result.push(ary[i])
       }
     }
     return result
   },
 
-  fill: function () {
+  difference: function (ary, ...values) {
+    var map = {}
+    var result = []
 
+    for (var i = 0; i < ary.length; i++) {
+
+    }
+
+  },
+
+  drop: function (ary, n = 1) {
+    var result = []
+    for (var i = n; i < ary.length; i++) {
+      result.push(ary[i])
+    }
+    return result
+  },
+
+  fill: function (ary, value, start = 0, end = ary.length - 1) {
+    var result = []
+    for (var i = start; i <= end; i++) {
+      ary[i] = value
+      result.push(ary[i])
+    }
+    return result
   },
 
 }
