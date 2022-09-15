@@ -68,10 +68,27 @@ var lanf01 = {
     var result = []
     for (i = n; i >= 0; i--) {
       result.push(ary[i])
-      reserve(result)
+      revers1e(result)
     }
     return result
 
   },
+
+  flatten: function (array) {
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      var item = array[i]
+
+      if (Array.isArray(item)) {
+        for (var j = 0; j < item.length; j++) {
+          result.push(item[j])
+        }
+      } else {
+        result.push(item)
+      }
+    }
+    return result
+
+  }
 
 }
