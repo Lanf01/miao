@@ -17,7 +17,7 @@ var lanf01 = {
         result.push(tmp)
         tmp = []
       }
-      if (tmp(0)) {
+      if (tmp[0]) {
         result.push(tmp)
       }
     }
@@ -35,8 +35,6 @@ var lanf01 = {
       }
     }
     return result
-
-
   },
 
   fill: function () {
