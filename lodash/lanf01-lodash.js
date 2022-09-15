@@ -17,14 +17,15 @@ var lanf01 = {
         result.push(tmp)
         tmp = []
       }
-      if (tmp[0]) {
-        result.push(tmp)
-      }
+
+    }
+    if (tmp[0]) {
+      result.push(tmp)
     }
     return result
   },
 
-  compact: function (ary) {
+  compact: function (ary,) {
     var result = []
     var tmp = []
     for (var i = 0; i < ary.length; i++) {
