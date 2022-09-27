@@ -99,7 +99,7 @@ var lanf01 = {
 
   flattenDeep: function (ary) {
     var result = []
-    for (var i = 0; i < array.length; i++) {
+    for (var i = 0; i < ary.length; i++) {
       var item = ary[i]
 
       if (Array.isArray(item)) {
@@ -117,12 +117,15 @@ var lanf01 = {
 
 
   flattenDepth: function (ary, depth = 1) {
+    if (depth == 0) {
+      return ary.slice()
+    }
     var result = []
-    for (var i = 0; i < array.length; i++) {
-      var item = array[i]
+    for (var i = 0; i < ary.length; i++) {
+      var item = ary[i]
       while (depth > 0) {
         if (Array.isArray(item)) {
-        var flatten = flattenDeep(item)
+        var flatten = flattenDepth(item)
         for (var j = 0; j < flatten.length; j++) {
           result.push(flatten[j])
           depth--
@@ -161,7 +164,7 @@ var lanf01 = {
       }
     }
     return -1
-  }.
+  },
 
 
 
