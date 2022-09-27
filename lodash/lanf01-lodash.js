@@ -38,10 +38,10 @@ var lanf01 = {
   difference: function (ary, ...values) {
     var result = []
     var tem = []
-    tem.push(...values)
+    tem.compact(...values)
 
     for (var i = 0; i < tem.length; i++) {
-      if (ary[i] !== tem[i]) {
+      if (!(ary[i] in tem)) {
         result.push(ary[i])
       }
     }
@@ -70,7 +70,7 @@ var lanf01 = {
 
   dropRight: function (ary, n = 1) {
     if (n > ary.length) {
-      return ary
+      return []
     }
     var result = []
     for (i = 0; i < ary.length - n; i++) {
@@ -95,6 +95,24 @@ var lanf01 = {
     }
     return result
 
-  }
+  },
+
+  flattenDeep: function (ary) {
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      var item = array[i]
+
+      if (Array.isArray(item)) {
+        var flatten = flattenDeep(item)
+        for (var j = 0; j < flatten.length; j++) {
+          result.push(flatten[j])
+        }
+      } else {
+        result.push(item)
+      }
+    }
+    return result
+
+  },
 
 }
