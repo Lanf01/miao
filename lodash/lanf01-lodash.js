@@ -36,12 +36,16 @@ var lanf01 = {
   },
 
   difference: function (ary, ...values) {
-    var map = {}
     var result = []
+    var tem = []
+    tem.push(...values)
 
-    for (var i = 0; i < ary.length; i++) {
-
+    for (var i = 0; i < tem.length; i++) {
+      if (ary[i] !== tem[i]) {
+        result.push(ary[i])
+      }
     }
+    return result
 
   },
 
@@ -64,11 +68,13 @@ var lanf01 = {
 
   },
 
-  dropRight: function (ary, n = ary.length - 2) {
+  dropRight: function (ary, n = 1) {
+    if (n > ary.length) {
+      return ary
+    }
     var result = []
-    for (i = n; i >= 0; i--) {
+    for (i = 0; i < ary.length - n; i++) {
       result.push(ary[i])
-      revers1e(result)
     }
     return result
 
