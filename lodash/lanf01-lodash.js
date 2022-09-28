@@ -142,7 +142,7 @@ var lanf01 = {
   fromPairs: function (pairs) {
     var result = {}
     for (var i = 0; i < pairs.length; i++) {
-      result[pairs[i][0]] = pairs[i][i]
+      result[pairs[i][0]] = pairs[i][1]
     }
     return result
   },
@@ -165,9 +165,6 @@ var lanf01 = {
     }
     return -1
   },
-
-
-
 
 
 
