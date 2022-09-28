@@ -97,23 +97,6 @@ var lanf01 = {
 
   },
 
-  flattenDeep: function (ary) {
-    var result = []
-    for (var i = 0; i < ary.length; i++) {
-      var item = ary[i]
-
-      if (Array.isArray(item)) {
-        var flatten = flattenDeep(item)
-        for (var j = 0; j < flatten.length; j++) {
-          result.push(flatten[j])
-        }
-      } else {
-        result.push(item)
-      }
-    }
-    return result
-
-  },
 
 
   flattenDepth: function (ary, depth = 1) {
@@ -158,7 +141,7 @@ var lanf01 = {
 
 
   indexOf: function (ary, value, fromIndex = 0) {
-    for (var i = 0; i < ary.length; i++) {
+    for (var i = fromIndex; i < ary.length; i++) {
       if (ary[i] == value) {
         return i
       }
@@ -166,6 +149,22 @@ var lanf01 = {
     return -1
   },
 
+  flattenDeep: function (ary) {
+    var result = []
+    for (var i = 0; i < ary.length; i++) {
+      var item = ary[i]
 
+      if (Array.isArray(item)) {
+        var flatten = flattenDeep(item)
+        for (var j = 0; j < flatten.length; j++) {
+          result.push(flatten[j])
+        }
+      } else {
+        result.push(item)
+      }
+    }
+    return result
+
+  },
 
 }
